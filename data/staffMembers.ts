@@ -45,7 +45,7 @@ const staffMembers = [
     position: "TECH-CHAIR",
     homeTown: "Stevenson Ranch, CA",
     college: "University of California - Santa Barbara",
-    petPeeve: "People that leave a lot of space so I can't park",
+    petPeeve: "When people go 60mph in the fast lane",
     funFact: "My body is sensitive to caffeine",
     imageUrl: "/staff_photos/nathan.jpg",
     imageUrlBack: "/staff_photos/nathan_flip.jpg",
