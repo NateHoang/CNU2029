@@ -5,10 +5,6 @@ import { FaLink, FaInstagram, FaDiscord } from "react-icons/fa";
 
 
 const Footer = () => {
-  const [year, setYear] = useState(0);
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
   return (
     <footer className="bg-[#1f1f1f] text-white p-6 text-center">
       <div className="container mx-auto">
@@ -24,7 +20,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-gray-400 mt-4">
-          &copy; {year} CNUCDM
+          &copy; 2029 CNUCDM
         </p>
       </div>
     </footer>

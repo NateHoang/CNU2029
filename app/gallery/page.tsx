@@ -15,13 +15,12 @@ const GalleryPage: React.FC = () => {
             Our Favorite Memories
           </h2>
           <h2 className="text-2xl mt-4 font-semibold">D1 Year</h2>
-          {/* <GalleryYearSection
+          <GalleryYearSection
             images={galleryImages2025_2026.slice().reverse()}
             year="2025-2026"
             quarter="Fall"
             p="high"
-          /> */}
-          <p>Coming Soon!</p>
+          />
         </div>
       </div>
     </div>
