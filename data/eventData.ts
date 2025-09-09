@@ -1,14 +1,26 @@
 const events = 
 [
   {
-    "title": "study jam",
-    "day of week": "Wednesday",
-    "date": "2025-06-04",
-    "time": "07:00 PM - 11:00 PM",
-    "start": "07:00 PM",
-    "end": "11:00 PM",
-    "location": "arts 1353",
-    "customTime": ""
+    "title": "Distress Event",
+    "day of week": "Friday",
+    "date": "2025-09-26",
+    "time": "07:30 PM - 10:30 PM",
+    "start": "07:30 PM",
+    "end": "10:30 PM",
+    "location": "TBA",
+    "customTime": "",
+    "pic": "/event_photos/tba.gif"
+  },
+  {
+    "title": "Halloween Event",
+    "day of week": "Friday",
+    "date": "2025-10-24",
+    "time": "07:30 PM - 10:30 PM",
+    "start": "07:30 PM",
+    "end": "10:30 PM",
+    "location": "TBA",
+    "customTime": "",
+    "pic": "/event_photos/tba.gif"
   }
 ];
 
