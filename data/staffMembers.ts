@@ -43,7 +43,7 @@ const staffMembers = [
     id: 5,
     name: "Nathan Hoang",
     position: "TECH-CHAIR",
-    homeTown: "Los Angeles, CA",
+    homeTown: "Stevenson Ranch, CA",
     college: "University of California - Santa Barbara",
     petPeeve: "Dean Ali",
     funFact: "I graduated with a computer science B.S. degree",
