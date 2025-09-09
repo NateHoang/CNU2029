@@ -46,7 +46,7 @@ const staffMembers = [
     homeTown: "Stevenson Ranch, CA",
     college: "University of California - Santa Barbara",
     petPeeve: "Dean Ali",
-    funFact: "I graduated with a computer science B.S. degree",
+    funFact: "My body is sensitive to caffeine",
     imageUrl: "/staff_photos/nathan.jpg",
     imageUrlBack: "/staff_photos/nathan_flip.jpg",
   },
