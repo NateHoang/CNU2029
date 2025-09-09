@@ -8,7 +8,7 @@ const page = () => {
           <h1>Upcoming Events!</h1>
           <div className="flex justify-center">
             <Iframe
-              url="https://calendar.google.com/calendar/embed?src=7hptoesel85ltt2ndeg0dtptec%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+              url="https://calendar.google.com/calendar/embed?src=cnucdm2029%40gmail.com&ctz=America%2FLos_Angeles"
               width="800"
               height="800"
               className="mb-8 border-solid 1px border-[#777]"

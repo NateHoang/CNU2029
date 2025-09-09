@@ -9,8 +9,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "UCSB TASA",
-  description: "Website for UCSB TASA",
+  title: "CNU 2029",
+  description: "Website for CNUCDM Class of 2029",
   icons: {
     icon: ["/favicon.ico"],
     apple: ["/apple-touch-icon.png"],
@@ -27,8 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {" "}
-        <Header title="UCSB TASA"></Header>
+        <Header title="CNUCDM 2029" />
         <NavBar />
         {children}
         <SpeedInsights />

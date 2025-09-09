@@ -16,7 +16,7 @@ from googleapiclient.discovery import build
 
 # Replace with your API key and Calendar ID
 API_KEY = os.getenv("API_KEY")
-CALENDAR_ID = "7hptoesel85ltt2ndeg0dtptec@group.calendar.google.com"
+CALENDAR_ID = "cnucdm2029@gmail.com"
 
 def main():
     # Build the service with the API key instead of credentials
