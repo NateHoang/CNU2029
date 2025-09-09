@@ -5,7 +5,7 @@ interface GalleryImage {
   id: number;
   title: string;
   imageUrl: string;
-  link: string;
+  link?: string;
   quarter: string;
 }
 
