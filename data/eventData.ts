@@ -1,5 +1,16 @@
 const events = 
 [
+    {
+    "title": "ADEA Study Session",
+    "day of the week": "Saturday",
+    "date": "2025-9-20",
+    "time": "07:00 AM - 05:00 PM",
+    "start": "07:00 AM",
+    "end": "05:00 PM",
+    "location": "2521 Jazz Alley, Sacramento, CA 95816",
+    "customTime": "",
+    "pic": "/event_photos/adeasipandstudy.jpg"
+  },
   {
     "title": "Distress Event",
     "day of week": "Friday",
@@ -21,7 +32,7 @@ const events =
     "location": "TBA",
     "customTime": "",
     "pic": "/event_photos/tba.gif"
-  }
+  },
 ];
 
 export default events;

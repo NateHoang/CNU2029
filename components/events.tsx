@@ -81,7 +81,8 @@ const Events = () => {
     onClick={() => setSelectedEvent(null)} // close when clicking backdrop
   >
     <div
-      className="bg-white rounded-lg shadow-lg p-6 max-w-2xl w-full mx-4 relative"
+      className="bg-white rounded-lg shadow-lg p-6 max-w-2xl w-full mx-4 relative 
+                 max-h-screen overflow-y-auto" // ✅ allow scrolling
       onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
     >
       <button
@@ -102,12 +103,25 @@ const Events = () => {
       <p className="text-gray-600 mb-2">
         <strong>Time: </strong> {selectedEvent.time}
       </p>
-      <p className="text-gray-600">
-        <strong>Location:</strong> {selectedEvent.location}
-      </p>
+<p className="text-gray-600">
+  <strong>Location:</strong>{" "}
+  <a
+    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      selectedEvent.location
+    )}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 hover:underline"
+    onClick={(e) => e.stopPropagation()} // prevent closing modal
+  >
+    {selectedEvent.location}
+  </a>
+</p>
+
     </div>
   </div>
 )}
+
 
     </div>
   );
