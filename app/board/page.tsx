@@ -1,11 +1,30 @@
 import ScrollTransition from "@/components/scroll-transition";
 import MemberCoin from "../../components/member_coin";
 import staffMembers from "@/data/staffMembers";
+import Image from "next/image";
 
 const StaffPage = () => {
   return (
     <div>
       <div className="items-center justify-center min-h-screen">
+              <div className="relative h-80 lg:h-[85vh]">
+                <Image
+                  src="/homepage/drakesHeader.jpg"
+                  alt="Staff Cover Photo"
+                  fill
+                  quality={100}
+                  priority={true}
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+                  <div className="relative z-10">
+                    <h1 className="text-4xl font-semibold mb-4 uppercase">
+                      Meet the Board
+                    </h1>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-black opacity-30"></div>
+              </div>
         <div className="px-4 py-8 text-center bg-gray-100">
           <h2 className="text-3xl font-bold text-gray-900 uppercase">
             Meet the Board!
