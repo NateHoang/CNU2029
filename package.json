@@ -40,5 +40,11 @@
     "@types/react-modal": "^3.16.1",
     "encoding": "^0.1.13",
     "typescript": "5.1.6"
+  },
+  "allowScripts": {
+    "@vercel/speed-insights@1.0.2": true,
+    "esbuild@0.14.47": true,
+    "fsevents@2.3.2": true,
+    "sharp@0.33.2": true
   }
 }
