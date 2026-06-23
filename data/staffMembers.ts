@@ -16,7 +16,7 @@ const staffMembers = [
     position: "VICE-PRESIDENT",
     homeTown: "Sacramento, CA",
     college: "Sacramento State",
-    petPeeve: "Ethan Ngo (When he does trash in videogames or in general)",
+    petPeeve: "Ethan Ngo (When he does trash in video games or in general)",
     funFact: "I use to have atrioventricular reentrant tachycardia",
     imageUrl: "/staff_photos/regan.jpg",
     imageUrlBack: "/staff_photos/regan_flip.jpg",

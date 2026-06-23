@@ -1,5 +1,9 @@
+"use client";
+
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 import ScrollTransition from "@/components/scroll-transition";
 import MemberCoin from "../../components/member_coin";
 import staffMembers from "@/data/staffMembers";
@@ -7,8 +11,8 @@ import staffMembers from "@/data/staffMembers";
 const StaffHeroCarousel = () => {
   const images = useMemo(
     () => [
-      { src: "/board_photos/profboard.jpg", alt: "Meet the Board" },
-      { src: "/board_photos/scrubs.jpg", alt: "Meet the Board" },
+      { src: "/board_photos/profboard.png", alt: "Meet the Board" },
+      { src: "/board_photos/scrubs.png", alt: "Meet the Board" },
     ],
     [],
   );
@@ -21,6 +25,7 @@ const StaffHeroCarousel = () => {
 
   return (
     <div className="relative h-80 lg:h-[85vh] overflow-hidden">
+      {/* Slides row */}
       <div
         className="flex h-full w-full transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${index * 100}%)` }}
@@ -58,9 +63,7 @@ const StaffHeroCarousel = () => {
         aria-label="Previous slide"
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/80 hover:bg-white text-gray-800 p-2 shadow"
       >
-        <span aria-hidden="true" className="block text-xl leading-none">
-          
-        </span>
+        <FaChevronLeft className="text-2xl" aria-hidden="true" />
       </button>
 
       <button
@@ -69,9 +72,7 @@ const StaffHeroCarousel = () => {
         aria-label="Next slide"
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/80 hover:bg-white text-gray-800 p-2 shadow"
       >
-        <span aria-hidden="true" className="block text-xl leading-none">
-          
-        </span>
+        <FaChevronRight className="text-2xl" aria-hidden="true" />
       </button>
     </div>
   );
@@ -87,6 +88,7 @@ const StaffPage = () => {
           <h2 className="text-3xl font-bold text-gray-900 uppercase">
             Meet the Board!
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mt-16 mx-16 items-start">
             {staffMembers.map((staff) => (
               <div
@@ -100,28 +102,33 @@ const StaffPage = () => {
                       imageUrlBack={staff.imageUrlBack}
                       name={staff.name}
                       position={staff.position}
-                      // Prioritize the first 3 images for loading
                       priority={staff.id <= 6}
                     />
                   </div>
+
                   <h2 className="text-black text-2xl mt-6 font-semibold">
                     {staff.name}
                   </h2>
+
                   <p className="text-md text-[#8888888] mt-3 font-bold leading-20">
                     {staff.position.toUpperCase()}
                   </p>
+
                   <p className="text-md text-[#00000080] leading-16">
                     <strong>Home Town: </strong>
                     {staff.homeTown}
                   </p>
+
                   <p className="text-md text-[#00000080] leading-16">
                     <strong>Undergrad: </strong>
                     {staff.college}
                   </p>
+
                   <p className="text-md text-[#00000080] leading-16">
                     <strong>Pet Peeve: </strong>
                     {staff.petPeeve}
                   </p>
+
                   <p className="text-md text-[#00000080] leading-16">
                     <strong>Fun Fact: </strong>
                     {staff.funFact}
