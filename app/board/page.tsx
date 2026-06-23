@@ -1,36 +1,94 @@
+import { useMemo, useState } from "react";
+import Image from "next/image";
 import ScrollTransition from "@/components/scroll-transition";
 import MemberCoin from "../../components/member_coin";
 import staffMembers from "@/data/staffMembers";
-import Image from "next/image";
+
+const StaffHeroCarousel = () => {
+  const images = useMemo(
+    () => [
+      { src: "/board_photos/profboard.jpg", alt: "Meet the Board" },
+      { src: "/board_photos/scrubs.jpg", alt: "Meet the Board" },
+    ],
+    [],
+  );
+
+  const [index, setIndex] = useState(0);
+  const lastIndex = images.length - 1;
+
+  const prev = () => setIndex((i) => (i === 0 ? lastIndex : i - 1));
+  const next = () => setIndex((i) => (i === lastIndex ? 0 : i + 1));
+
+  return (
+    <div className="relative h-80 lg:h-[85vh] overflow-hidden">
+      <div
+        className="flex h-full w-full transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${index * 100}%)` }}
+      >
+        {images.map((img, i) => (
+          <div key={img.src} className="relative h-full w-full flex-shrink-0">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              quality={100}
+              priority={i === 0}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black opacity-30" />
+
+      {/* Title */}
+      <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+        <div className="relative z-10 px-4">
+          <h1 className="text-4xl font-semibold mb-4 uppercase">
+            Meet the Board
+          </h1>
+        </div>
+      </div>
+
+      {/* Left/Right arrows */}
+      <button
+        type="button"
+        onClick={prev}
+        aria-label="Previous slide"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/80 hover:bg-white text-gray-800 p-2 shadow"
+      >
+        <span aria-hidden="true" className="block text-xl leading-none">
+          
+        </span>
+      </button>
+
+      <button
+        type="button"
+        onClick={next}
+        aria-label="Next slide"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/80 hover:bg-white text-gray-800 p-2 shadow"
+      >
+        <span aria-hidden="true" className="block text-xl leading-none">
+          
+        </span>
+      </button>
+    </div>
+  );
+};
 
 const StaffPage = () => {
   return (
     <div>
       <div className="items-center justify-center min-h-screen">
-              <div className="relative h-80 lg:h-[85vh]">
-                <Image
-                  src="/homepage/drakesHeader.jpg"
-                  alt="Staff Cover Photo"
-                  fill
-                  quality={100}
-                  priority={true}
-                  style={{ objectFit: "cover", objectPosition: "center" }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-                  <div className="relative z-10">
-                    <h1 className="text-4xl font-semibold mb-4 uppercase">
-                      Meet the Board
-                    </h1>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black opacity-30"></div>
-              </div>
+        <StaffHeroCarousel />
+
         <div className="px-4 py-8 text-center bg-gray-100">
           <h2 className="text-3xl font-bold text-gray-900 uppercase">
             Meet the Board!
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mt-16 mx-16 items-start">
-            {staffMembers.map((staff, index) => (
+            {staffMembers.map((staff) => (
               <div
                 key={staff.id}
                 className="flex flex-col items-center justify-center"
