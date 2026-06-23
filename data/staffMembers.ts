@@ -29,8 +29,8 @@ const staffMembers = [
     college: "California Polytechnic State San Luis Obispo ",
     petPeeve: "People who stink 🤮",
     funFact: "I am really bad at wordhunt",
-    imageUrl: "/staff_photos/bella.jpg",
-    imageUrlBack: "/staff_photos/bella_flip.jpg",
+    imageUrl: "/staff_photos/belle.jpg",
+    imageUrlBack: "/staff_photos/belle_flip.jpg",
   },
   {
     id: 4,
