@@ -145,7 +145,7 @@ const events = [
     end: "1:00 PM",
     location: "2201 Broadway Sacramento, CA, 95818",
     customTime: "",
-    pic: "/event_photos/smileforkids.jpg",
+    pic: "/event_photos/smileforkids.png",
     form: "https://docs.google.com/forms/d/e/1FAIpQLSdg-77TwlCDkm9N4wN7PLbs-a2Z2o7FMfk_u4koHb6e-D342A/viewform",
   },
 ];
