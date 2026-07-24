@@ -61,14 +61,14 @@ export const galleryImages2025_2026: GalleryImage[] = [
   {
     id: 8,
     title: "D1 Gala",
-    imageUrl: "/gallery_photos/d1/fall/D1Gala.png",
+    imageUrl: "/gallery_photos/d1/spring/D1Gala.png",
     link: "https://photos.google.com/share/AF1QipMGeGwGvQ71CNs64Ofpk-6eijJgm82OMBuWlc2FvzPmtCRt0Y-pifADAdRy0j8HLg?key=SERWQ09GbkFlcXA3ZE5xUlJvaFd4ekZRS21QbGVB",
     quarter: "Spring",
   },
   {
     id: 9,
     title: "Final D1 Picture",
-    imageUrl: "/gallery_photos/d1/fall/FinalD1Picture.png",
+    imageUrl: "/gallery_photos/d1/spring/FinalD1Picture.png",
     link: "https://photos.google.com/share/AF1QipOI65xTIqbyZbaYRDk_Np3Ylcf8D3cc3SrZUKWaaaTI1WqmppKPZBTrG8qL5194Fw?key=Uy16RWFMeExXQ2lTdlZ5QVZ6TlRLSUpCQzlYWUJn",
     quarter: "Spring",
   },
