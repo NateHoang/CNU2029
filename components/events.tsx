@@ -6,10 +6,11 @@ import events from "../data/eventData";
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
-  const groupOrder = ["ADEA", "ASDA", "CDA", "DSD", "D1"];
+  const groupOrder = ["D2", "ADEA", "ASDA", "CDA", "DSD"];
 
   const formatDate = (date: string) => {
     const eventDate = new Date(date);
+
     const options: Intl.DateTimeFormatOptions = {
       weekday: "long",
       year: "numeric",
@@ -17,7 +18,14 @@ const Events = () => {
       day: "numeric",
       timeZone: "UTC",
     };
+
     return eventDate.toLocaleDateString("en-US", options);
+  };
+
+  // Only make locations with a full address clickable.
+  // Example: "123 Main St, Sacramento, CA 95816"
+  const hasFullAddress = (location: string) => {
+    return location.includes(",");
   };
 
   const currentDate = new Date();
@@ -25,7 +33,7 @@ const Events = () => {
   futureDate.setDate(currentDate.getDate() - 1);
 
   const upcomingEvents = events.filter(
-    (event) => new Date(event.date) >= futureDate
+    (event) => new Date(event.date) >= futureDate,
   );
 
   const groupedEvents = groupOrder.map((group) => ({
@@ -37,13 +45,13 @@ const Events = () => {
     <div className="bg-gray-100 py-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInTransition>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900">
             Upcoming Events
           </h2>
 
           {upcomingEvents.length === 0 ? (
             <div className="w-72">
-              <div className="bg-white rounded-lg shadow p-4 mb-4">
+              <div className="mb-4 rounded-lg bg-white p-4 shadow">
                 <p className="text-lg text-gray-600">
                   No events yet, check back soon!
                 </p>
@@ -54,7 +62,8 @@ const Events = () => {
               ({ group, events }) =>
                 events.length > 0 && (
                   <div key={group} className="mb-8">
-                    <h3 className="text-2xl font-semibold mb-4">{group}</h3>
+                    <h3 className="mb-4 text-2xl font-semibold">{group}</h3>
+
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                       {events.map((event) => (
                         <div
@@ -62,17 +71,20 @@ const Events = () => {
                           className="w-full cursor-pointer"
                           onClick={() => setSelectedEvent(event)}
                         >
-                          <div className="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
-                            <h3 className="text-xl font-bold mb-2">
+                          <div className="rounded-lg bg-white p-4 shadow transition hover:shadow-lg">
+                            <h3 className="mb-2 text-xl font-bold">
                               {event.title}
                             </h3>
+
                             {event.date && (
-                              <p className="text-gray-600 mb-2">
-                                <strong>Date: </strong> {formatDate(event.date)}
+                              <p className="mb-2 text-gray-600">
+                                <strong>Date: </strong>
+                                {formatDate(event.date)}
                               </p>
                             )}
+
                             {event.time && (
-                              <p className="text-gray-600 mb-2">
+                              <p className="mb-2 text-gray-600">
                                 <strong>Time: </strong>
                                 {event.customTime === "" ? (
                                   <span>{event.time} PST</span>
@@ -86,78 +98,87 @@ const Events = () => {
                       ))}
                     </div>
                   </div>
-                )
+                ),
             )
           )}
         </FadeInTransition>
       </div>
 
-      {/* Modal OUTSIDE the container */}
       {selectedEvent && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
-          onClick={() => setSelectedEvent(null)} // close when clicking backdrop
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+          onClick={() => setSelectedEvent(null)}
         >
           <div
-            className="bg-white rounded-lg shadow-lg p-6 max-w-2xl w-full mx-4 relative 
-                       max-h-screen overflow-y-auto" // ✅ allow scrolling
-            onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+            className="relative mx-4 max-h-screen w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+              className="absolute right-2 top-2 text-gray-500 hover:text-gray-800"
               onClick={() => setSelectedEvent(null)}
+              aria-label="Close event details"
             >
               ✕
             </button>
-            <h3 className="text-2xl font-bold mb-4">{selectedEvent.title}</h3>
+
+            <h3 className="mb-4 text-2xl font-bold">{selectedEvent.title}</h3>
+
             {selectedEvent.pic && (
               <img
                 src={selectedEvent.pic}
                 alt={selectedEvent.title}
-                className="rounded-lg mb-4 w-full"
+                className="mb-4 w-full rounded-lg"
               />
             )}
+
             {selectedEvent.date && (
-              <p className="text-gray-600 mb-2">
-                <strong>Date: </strong> {formatDate(selectedEvent.date)}
+              <p className="mb-2 text-gray-600">
+                <strong>Date: </strong>
+                {formatDate(selectedEvent.date)}
               </p>
             )}
+
             {selectedEvent.time && (
-              <p className="text-gray-600 mb-2">
-                <strong>Time: </strong> {selectedEvent.time}
+              <p className="mb-2 text-gray-600">
+                <strong>Time: </strong>
+                {selectedEvent.time}
               </p>
             )}
+
             {selectedEvent.location && (
               <p className="text-gray-600">
                 <strong>Location:</strong>{" "}
                 {selectedEvent.location === "TBA" ? (
                   "TBA"
-                ) : (
+                ) : hasFullAddress(selectedEvent.location) ? (
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      selectedEvent.location
+                      selectedEvent.location,
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
-                    onClick={(e) => e.stopPropagation()} // prevent closing modal
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {selectedEvent.location}
                   </a>
+                ) : (
+                  selectedEvent.location
                 )}
               </p>
             )}
+
             {selectedEvent.form && selectedEvent.form.trim() !== "" && (
-              <p className="text-gray-600 mt-2">
+              <p className="mt-2 text-gray-600">
                 <strong>Form: </strong>
                 <a
                   href={selectedEvent.form}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
-                  onClick={(e) => e.stopPropagation()} // prevent closing modal
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  Click here to sign up
+                  Click here for the form
                 </a>
               </p>
             )}

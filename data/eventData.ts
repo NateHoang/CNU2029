@@ -63,6 +63,17 @@ const events = [
     form: "https://docs.google.com/forms/d/e/1FAIpQLSdnpkAh1pNi4ns1o91oxyrY1XqG3NqOEgkbFz7Zgf6OszXZNA/viewform",
   },
   {
+    title: "White Coat Ceremony",
+    group: "D2",
+    dayOfWeek: "Saturday",
+    date: "2026-08-22",
+    time: "09:45 AM - 11:00 AM",
+    start: "09:45 AM",
+    end: "11:00 AM",
+    location: "9700 W Taron Dr, Elk Grove, CA 95757",
+    customTime: "",
+  },
+  {
     title: "First General Meeting",
     group: "ASDA",
     dayOfWeek: "Monday",
@@ -85,6 +96,7 @@ const events = [
     location: "Grand Hall",
     customTime: "",
     pic: "/event_photos/asdaFeverWeek.jpg",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLScoOmQI6mY-zSHOzFPGVr_yIbnHWYzJQZfnDw92G0IQgX4Faw/viewform",
   },
   {
     title: "Wellness & Wonder",
@@ -121,6 +133,7 @@ const events = [
     location: "Grand Hall",
     customTime: "",
     pic: "/event_photos/asdaFeverWeek.jpg",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSeIR1J5nFdH35jzfIlmSQJi67Bn-ySUosp2PScYJp4gKYOpMw/viewform",
   },
 ];
 
