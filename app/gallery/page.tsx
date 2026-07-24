@@ -1,26 +1,33 @@
 "use client";
 
-import {
-  galleryImages2025_2026,
-} from "@/data/galleryImages";
-import React, { useState } from "react";
+import React from "react";
+import { galleryImages2025_2026 } from "@/data/galleryImages";
 import GalleryYearSection from "@/components/galleryYearSection";
 
+const quarters = ["Spring", "Winter", "Fall"] as const;
+
 const GalleryPage: React.FC = () => {
+  const images = [...galleryImages2025_2026].reverse();
+
   return (
-    <div className="gallery-container ">
+    <div className="gallery-container">
       <div className="bg-gray-100">
         <div className="mx-4 lg:mx-16 pt-4 pb-8">
-          <h2 className="text-4xl mt-4 font-semibold text-center">
+          <h1 className="mt-4 text-center text-4xl font-semibold">
             Our Favorite Memories
-          </h2>
-          <h2 className="text-2xl mt-4 font-semibold">D1 Year</h2>
-          <GalleryYearSection
-            images={galleryImages2025_2026.slice().reverse()}
-            year="2025-2026"
-            quarter="Fall"
-            p="high"
-          />
+          </h1>
+
+          <h2 className="mt-4 text-2xl font-semibold">D1 Year</h2>
+
+          {quarters.map((quarter) => (
+            <GalleryYearSection
+              key={quarter}
+              images={images}
+              year="2025-2026"
+              quarter={quarter}
+              p="high"
+            />
+          ))}
         </div>
       </div>
     </div>
