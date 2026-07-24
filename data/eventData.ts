@@ -135,6 +135,19 @@ const events = [
     pic: "/event_photos/asdaFeverWeek.jpg",
     form: "https://docs.google.com/forms/d/e/1FAIpQLSeIR1J5nFdH35jzfIlmSQJi67Bn-ySUosp2PScYJp4gKYOpMw/viewform",
   },
+  {
+    title: "Smile for Kids",
+    group: "AAPD",
+    dayOfWeek: "Saturday",
+    date: "2026-08-29",
+    time: "8:30 AM - 1:00 PM",
+    start: "8:30 AM",
+    end: "1:00 PM",
+    location: "2201 Broadway Sacramento, CA, 95818",
+    customTime: "",
+    pic: "/event_photos/smileforkids.jpg",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSdg-77TwlCDkm9N4wN7PLbs-a2Z2o7FMfk_u4koHb6e-D342A/viewform",
+  },
 ];
 
 export default events;

@@ -6,7 +6,7 @@ import events from "../data/eventData";
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
-  const groupOrder = ["D2", "ADEA", "ASDA", "CDA", "DSD"];
+  const groupOrder = ["D2", "ADEA", "ASDA", "AAPD", "CDA", "DSD"];
 
   const formatDate = (date: string) => {
     const eventDate = new Date(date);
