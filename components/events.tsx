@@ -22,8 +22,6 @@ const Events = () => {
     return eventDate.toLocaleDateString("en-US", options);
   };
 
-  // Only make locations with a full address clickable.
-  // Example: "123 Main St, Sacramento, CA 95816"
   const hasFullAddress = (location: string) => {
     return location.includes(",");
   };

@@ -148,6 +148,32 @@ const events = [
     pic: "/event_photos/smileforkids.png",
     form: "https://docs.google.com/forms/d/e/1FAIpQLSdg-77TwlCDkm9N4wN7PLbs-a2Z2o7FMfk_u4koHb6e-D342A/viewform",
   },
+  {
+    title: "DSD Welcome Party",
+    group: "DSD",
+    dayOfWeek: "Friday",
+    date: "2026-07-31",
+    time: "08:30 PM - ? PM",
+    start: "08:30 PM",
+    end: "?",
+    location: "TBA",
+    customTime: "",
+    pic: "/event_photos/dsdWelcome.png",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSeIQxrvlWwzCLL5jN_U3574VjDBwNys7YfEJzRAqzmFwmx4UA/viewform?usp=send_form",
+  },
+  {
+    title: "Whiteman's BBQ",
+    group: "DSD",
+    dayOfWeek: "Saturday",
+    date: "2026-08-08",
+    time: "06:00 PM - ? PM",
+    start: "06:00 PM",
+    end: "?",
+    location: "TBA",
+    customTime: "",
+    pic: "/event_photos/BBQForm.jpg",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSeIQxrvlWwzCLL5jN_U3574VjDBwNys7YfEJzRAqzmFwmx4UA/viewform?usp=send_form",
+  },
 ];
 
 export default events;
