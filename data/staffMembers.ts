@@ -1,7 +1,7 @@
 const staffMembers = [
   {
     id: 1,
-    name: "Mia Phournrath",
+    name: "Mia Phounrath",
     position: "PRESIDENT",
     homeTown: "Oakley, CA",
     college: "University of the Pacific",
