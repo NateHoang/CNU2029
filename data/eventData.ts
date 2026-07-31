@@ -138,7 +138,7 @@ const events = [
     title: "Fever Week Social Mixer Sign-Up",
     group: "ASDA",
     dayOfWeek: "Friday",
-    date: "2026-07-30",
+    date: "2026-07-31",
     time: "7:00 PM - 8:30 PM",
     start: "7:00 PM",
     end: "8:30 PM",
