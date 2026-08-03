@@ -91,10 +91,10 @@ const events = [
     group: "DSD",
     dayOfWeek: "Saturday",
     date: "2026-08-08",
-    time: "06:00 PM - ? PM",
+    time: "06:00 PM",
     start: "06:00 PM",
     end: "?",
-    location: "TBA",
+    location: "10 Oak Ranch Sacramento CA 95831",
     customTime: "",
     pic: "/event_photos/BBQForm.jpg",
     form: "https://docs.google.com/forms/d/e/1FAIpQLSeIQxrvlWwzCLL5jN_U3574VjDBwNys7YfEJzRAqzmFwmx4UA/viewform?usp=send_form",
@@ -134,17 +134,6 @@ const events = [
   //   customTime: "TBA",
   //   pic: "/event_photos/tba.gif",
   // },
-  {
-    title: "Fever Week Social Mixer Sign-Up",
-    group: "ASDA",
-    dayOfWeek: "Friday",
-    date: "2026-07-31",
-    time: "7:00 PM - 8:30 PM",
-    start: "7:00 PM",
-    end: "8:30 PM",
-    location: "6415 Elvas Ave, Sacramento, CA 95819",
-    form: "https://docs.google.com/forms/d/e/1FAIpQLSfD34jNmC7qMUVTnl0996YYAI9rRfDF2KK3-sRbNoHCzA5s-Q/viewform?pli=1",
-  },
 ];
 
 export default events;
