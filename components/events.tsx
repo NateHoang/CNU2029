@@ -26,12 +26,56 @@ const Events = () => {
     return location.includes(",");
   };
 
-  const currentDate = new Date();
-  const futureDate = new Date();
-  futureDate.setDate(currentDate.getDate() - 1);
+  /**
+   * Returns the date and time at which an event ends.
+   *
+   * Supported time format:
+   * "9:00 AM - 3:00 PM"
+   *
+   * An optional `endDate` property can be added to eventData for
+   * events that end on a different day.
+   */
+  const getEventEndDate = (event: any) => {
+    const date = event.endDate ?? event.date;
+
+    // Parse manually so YYYY-MM-DD is treated as local time instead of UTC.
+    const [year, month, day] = date.split("-").map(Number);
+    const eventEndDate = new Date(year, month - 1, day);
+
+    // Extract the last time from a range such as:
+    // "9:00 AM - 3:00 PM"
+    const endTime = event.time?.split("-").pop()?.trim();
+
+    const timeMatch = endTime?.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/i);
+
+    if (!timeMatch) {
+      // If no valid end time exists, keep the event visible
+      // until the end of its event date.
+      eventEndDate.setHours(23, 59, 59, 999);
+      return eventEndDate;
+    }
+
+    let hours = Number(timeMatch[1]);
+    const minutes = Number(timeMatch[2] ?? 0);
+    const period = timeMatch[3].toUpperCase();
+
+    if (period === "PM" && hours !== 12) {
+      hours += 12;
+    }
+
+    if (period === "AM" && hours === 12) {
+      hours = 0;
+    }
+
+    eventEndDate.setHours(hours, minutes, 0, 0);
+
+    return eventEndDate;
+  };
+
+  const now = new Date();
 
   const upcomingEvents = events.filter(
-    (event) => new Date(event.date) >= futureDate,
+    (event) => getEventEndDate(event) >= now,
   );
 
   const groupedEvents = groupOrder.map((group) => ({
@@ -109,7 +153,7 @@ const Events = () => {
         >
           <div
             className="relative mx-4 max-h-screen w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6 shadow-lg"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
           >
             <button
               className="absolute right-2 top-2 text-gray-500 hover:text-gray-800"
@@ -156,7 +200,7 @@ const Events = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(event) => event.stopPropagation()}
                   >
                     {selectedEvent.location}
                   </a>
@@ -174,7 +218,7 @@ const Events = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(event) => event.stopPropagation()}
                 >
                   Click here for the form
                 </a>
