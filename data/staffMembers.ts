@@ -1,7 +1,7 @@
 const staffMembers = [
   {
     id: 1,
-    name: "Ghida Khaleel",
+    name: "Ghida Al Obaidi",
     position: "PRESIDENT",
     homeTown: "Houston - TX",
     college: "University of Houston",
@@ -68,7 +68,7 @@ const staffMembers = [
   {
     id: 7,
     name: "Hugh Byoun",
-    position: "SOCIAL MEDIA CHAIR",
+    position: "WELLNESS CHAIR",
     homeTown: "Irvine, CA",
     college: "University of the Pacific",
     petPeeve: "Poorly organized Powerpoints",
@@ -90,7 +90,7 @@ const staffMembers = [
   {
     id: 9,
     name: "Nadia Elnekroshy",
-    position: "WELLNESS-CHAIR",
+    position: "SOCIAL MEDIA CHAIR",
     homeTown: "Elk Grove, CA",
     college: "University of the Pacific",
     petPeeve: "Multiple people talking to me at once",
