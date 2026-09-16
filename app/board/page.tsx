@@ -11,8 +11,8 @@ import staffMembers from "@/data/staffMembers";
 const StaffHeroCarousel = () => {
   const images = useMemo(
     () => [
-      { src: "/board_photos/profboard.png", alt: "Meet the Board" },
-      { src: "/board_photos/scrubs.png", alt: "Meet the Board" },
+      { src: "/board_photos/d2/profboard.jpg", alt: "Meet the Board" },
+      { src: "/board_photos/d2/scrubs.jpg", alt: "Meet the Board" },
     ],
     [],
   );
