@@ -69,7 +69,7 @@ const events: Event[] = [
     start: "12:00 PM",
     end: "01:00 PM",
     customTime: "",
-    location: "Student Lounge",
+    location: "North Hall",
     pic: "/event_photos/d2/fall/pedOwnership.png",
     form: "https://docs.google.com/forms/d/e/1FAIpQLSdNs-Xn3-MbUHel2BT1aiw97SWUTdNraUfvaTy1BQraLGw2nw/viewform",
   },
