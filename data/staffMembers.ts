@@ -89,7 +89,7 @@ const staffMembers = [
   },
   {
     id: 9,
-    name: "Nadia Elnekroshy",
+    name: "Nadia Elnokrashy",
     position: "SOCIAL MEDIA CHAIR",
     homeTown: "Elk Grove, CA",
     college: "University of the Pacific",

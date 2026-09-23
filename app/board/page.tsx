@@ -11,8 +11,21 @@ import staffMembers from "@/data/staffMembers";
 const StaffHeroCarousel = () => {
   const images = useMemo(
     () => [
-      { src: "/board_photos/d2/profboard.jpg", alt: "Meet the Board" },
-      { src: "/board_photos/d2/scrubs.jpg", alt: "Meet the Board" },
+      {
+        src: "/board_photos/d2/profboard.jpg",
+        alt: "Meet the Board",
+        objectPosition: "center 80%",
+      },
+      {
+        src: "/board_photos/d2/scrubs.jpg",
+        alt: "Meet the Board",
+        objectPosition: "center 25%",
+      },
+      {
+        src: "/board_photos/d2/scrubsSilly.jpg",
+        alt: "Meet the Board",
+        objectPosition: "center 30%",
+      },
     ],
     [],
   );
@@ -38,7 +51,7 @@ const StaffHeroCarousel = () => {
               fill
               quality={100}
               priority={i === 0}
-              style={{ objectFit: "cover", objectPosition: "center" }}
+              style={{ objectFit: "cover", objectPosition: img.objectPosition }}
             />
           </div>
         ))}
