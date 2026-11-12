@@ -120,9 +120,39 @@ const events: Event[] = [
     form: "https://docs.google.com/forms/d/e/1FAIpQLSc-N1TDHx2GUsyjjiL1l8M8tkNlXkC5pN8O3qUnExPpecSCag/viewform?usp=send_form",
   },
   {
-    title: "Delta Sigma Delta Rush Week",
+    title: "Donuts with the Delts",
     group: "DSD",
     date: "2026-11-16",
+    pic: "/event_photos/d2/winter/rushWeek.png",
+  },
+  {
+    title: "Pie a Professor",
+    group: "DSD",
+    date: "2026-11-17",
+    pic: "/event_photos/d2/winter/rushWeek.png",
+  },
+  {
+    title: "Slice of Success",
+    group: "DSD",
+    date: "2026-11-18",
+    pic: "/event_photos/d2/winter/rushWeek.png",
+  },
+  {
+    title: "Get the Scoop on DSD",
+    group: "DSD",
+    date: "2026-11-19",
+    pic: "/event_photos/d2/winter/rushWeek.png",
+  },
+  {
+    title: "Lei'd back with the Delts",
+    group: "DSD",
+    date: "2026-11-20",
+    pic: "/event_photos/d2/winter/rushWeek.png",
+  },
+  {
+    title: "Welcome to the Brotherhood",
+    group: "DSD",
+    date: "2026-11-21",
     pic: "/event_photos/d2/winter/rushWeek.png",
   },
 ];
