@@ -155,6 +155,18 @@ const events: Event[] = [
     date: "2026-11-21",
     pic: "/event_photos/d2/winter/rushWeek.png",
   },
+  {
+    title: "Friendsgiving",
+    group: "D2",
+    date: "2026-11-23",
+    time: "6:00 PM",
+    location: "TBA",
+    start: "6:00 PM",
+    end: "",
+    customTime: "",
+    pic: "/event_photos/d2/winter/friendsGiving.png",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSflJqKO04XV9xnbeVevEapKzKYNIEDVdls6pSRj79pNPviyKw/viewform",
+  },
 ];
 
 export default events;
