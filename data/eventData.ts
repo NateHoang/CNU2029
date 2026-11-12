@@ -119,6 +119,12 @@ const events: Event[] = [
     pic: "/event_photos/d2/fall/wrc.png",
     form: "https://docs.google.com/forms/d/e/1FAIpQLSc-N1TDHx2GUsyjjiL1l8M8tkNlXkC5pN8O3qUnExPpecSCag/viewform?usp=send_form",
   },
+  {
+    title: "Delta Sigma Delta Rush Week",
+    group: "DSD",
+    date: "2026-11-16",
+    pic: "/event_photos/d2/winter/rushWeek.png",
+  },
 ];
 
 export default events;
