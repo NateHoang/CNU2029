@@ -4,6 +4,20 @@ import { useEffect, useState } from "react";
 import FadeInTransition from "./scroll-transition";
 import events from "../data/eventData";
 
+type Event = {
+  title: string;
+  group: string;
+  dayOfWeek?: string;
+  date?: string;
+  time?: string;
+  start?: string;
+  end?: string;
+  location?: string;
+  form?: string;
+  customTime?: string;
+  pic?: string;
+};
+
 const groupOrder = ["D2", "ADEA", "ASDA", "AAPD", "CDA", "DSD"];
 
 const dateOnlyPattern = /^\d{4}-\d{2}-\d{2}$/;
